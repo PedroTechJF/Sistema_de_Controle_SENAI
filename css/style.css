@@ -1,0 +1,368 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --background_gradient: linear-gradient(to right, #245aa6, #347fe7);
+    --background_itens: rgba(255, 255, 255, 0.3);
+    --background_itens_shadow: 0px 2px 30px 0px rgba(0,0,0,0.25);
+    --navbar_height: 8vh;
+    --container-height: 98vh;
+}
+
+body {
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    background-color: #1b62b7;
+    color: #fff;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 8vh;
+    -webkit-box-shadow: var(--background_itens_shadow);
+    -moz-box-shadow: var(--background_itens_shadow);
+    box-shadow: var(--background_itens_shadow);
+}
+
+.navbar a, .navbar i{
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_left > .nav_pages > a {
+    display: inline-block;
+    font-size: 15px!important;
+    transition: all ease-in-out 300ms;
+}
+
+.navbar_left > .nav_pages > a:hover{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.btnLogin {
+    margin-left: 20px!important;
+    padding: 3px 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all ease-in-out 300ms;
+}
+
+.btnLogin:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.extraBtns{
+    margin: 15px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.bottomBtns{
+    flex-direction: row;
+}
+
+.extraBtns a{
+    color: #fff!important;
+    text-decoration: underline;
+    font-size: 15px;
+    transition: all ease-in-out 300ms;
+}
+
+.extraBtns a:hover{
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.bottomBtns a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#backVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.container{
+    height: calc(var(--container-height) - var(--navbar_height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+}
+
+.main_form > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+    border-radius: 10px;
+    background-color: var(--background_itens);
+    -webkit-box-shadow: var(--background_itens_shadow);
+    -moz-box-shadow: var(--background_itens_shadow);
+    box-shadow: var(--background_itens_shadow);
+}
+
+.main_form > form > .page, .main_form > form > .extraFields, .extraFields > .docs, .docs > .doc > .docInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+.docs > .doc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: -webkit-fill-available;
+}
+
+.docs > .doc > a {
+    display: none;
+    color: #fff;
+    margin-top: -8px;
+    margin-right: -30px;
+}
+
+.main_form > form > .page {
+    width: 366px;
+}
+
+.main_form > form > .hidePage {
+    display: none;
+}
+
+.main_form > form > label {
+    align-self: center;
+}
+
+.main_form > form > label:first-child {
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.main_form a {
+    color: #fff;
+}
+
+select {
+    text-indent: 15px;
+}
+
+input, select{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    width: -webkit-fill-available;
+    margin-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    outline: none;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.readonly {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus, input:focus-visible, select:focus, select:focus-visible {
+    border: none;
+    outline: none;
+}
+
+input[type=date] { 
+    padding: 2px 8px;
+    width: -webkit-fill-available;
+}
+
+input[type=button] {
+    width: auto;
+    font-size: 15px;
+    margin-top: 8px;
+    transition: 100ms;
+    padding: 6px 12px;
+    transition: all linear 150ms;
+}
+
+input[type=button]:hover {
+    transform: scale(1.07);
+    background-color: rgba(255, 255, 255, 1);
+    text-shadow: none;
+}
+
+.pass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pass i {
+    position: relative;
+    margin-top: -8px;
+    margin-left: -18px;
+    left: -5px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.hideBtn{
+    display: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btns {
+    display: flex;
+    gap: 5px;
+}
+
+.btnUser{
+    font-size: 15px !important; 
+    margin: 0;
+    transition: all ease-in-out 300ms;
+    text-shadow: none;
+}
+
+.btnUser:hover{
+    text-decoration: underline;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.btnUser i {
+    margin: 0 7px; font-size: 17px;
+}
+
+label[for=relatorio_up], label[for=justificativa_up], label[for=boleto_up]{
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    margin: 2px 0 10px 0!important;
+    color: #000;
+    align-content: center;
+    text-align: center;
+    width: 170px;
+    height: 15px;
+    margin-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    outline: none;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+label[for=justificativa_up], label[for=boleto_up] {
+    width: 95.63%;
+}
+
+input[type=file]{
+    display: none;
+}
+
+/* .radioBtnArea {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.radioBtnArea input {
+    margin: 0;
+    width: auto;
+} */
+
+.enderecoArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    justify-content: space-around;
+}
+
+.enderecoArea label {
+    display: block;
+    text-align: center;
+}
+
+.responseMsg {
+    margin-top: 25px;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.searchField {
+    text-align: left;
+    margin: 0;
+    margin-right: 5px;
+    padding: 10px 8px;
+}
+
+.mainTable {
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid var(--background_itens);
+    border-radius: 10px;
+}
+
+.mainTable td {
+    border: 1px solid var(--background_itens);
+    border-collapse: collapse;
+}
+
+.mainTable th, .mainTable td {
+    width: max-content;
+    padding: 5px;
+}
+
+.mainTable th {
+    background-color: var(--background_itens);
+}
