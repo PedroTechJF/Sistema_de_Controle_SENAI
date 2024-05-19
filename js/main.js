@@ -23,18 +23,6 @@ window.addEventListener('load', (e) => {
             }
         }  
     })
-
-    // let extraFields = document.querySelector('.extraFields')
-    // if(decodedCookie.includes('vinculoAluno=')){
-    //     extraFields.classList.remove('hidePage');
-    //     extraFields.style.display = 'flex'
-    //     let vinculoAluno = decodedCookie.split('vinculoAluno=')[1].split(';')[0]
-    //     let vinculoSelect = document.querySelector('#vinculo')
-    //     vinculoSelect.value = vinculoAluno
-    //     document.cookie = "vinculoAluno=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
-    // } else {
-    //     extraFields.classList.add('hidePage');
-    // }
 })
 
 window.addEventListener('keydown', (e) => {
@@ -107,18 +95,6 @@ mainForm.addEventListener('change', (e) => {
     const element = e.target
 
     switch (element.id) {
-        // case 'vinculo':
-        //     const extraFields = document.querySelector('.extraFields')
-
-        //     if(element.value === 'aluno' || element.value === 'ex-aluno'){
-        //         extraFields.classList.remove('hidePage')
-        //         document.cookie = `vinculoAluno=${element.value}`
-        //         window.location.reload()
-        //     } else {
-        //         document.cookie = "vinculoAluno=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
-        //         window.location.reload()
-        //     }
-        //     break;
         case 'documento':
             const addNewDocBtn = document.querySelector('#addNewDoc')
             const valueField = document.querySelector('#valor')
@@ -259,13 +235,6 @@ mainForm.addEventListener('input', async (e) => {
             } else {
                 responseMsgField.innerHTML = ''
             }
-            // if(element.value.length < 8){
-            //     responseMsgField.innerHTML = 'A senha deve conter no mínimo 8 caracteres!'
-            // } else if(element.value.length > 30){
-            //     responseMsgField.innerHTML = 'A senha deve conter no máximo 30 caracteres!'
-            // } else {
-            //     responseMsgField.innerHTML = ''
-            // }
             break;
         default:
             break;
@@ -336,10 +305,8 @@ formBtn.addEventListener('click', (e) => {
                 maxLength = 30
                 if(input.value.length < minLength){
                     return responseMsgField.innerHTML = `O campo '${input.labels[0].innerHTML}' precisa possuir no mínimo ${minLength} caracteres!`
-                    // return responseMsgField.innerHTML = 'A senha deve conter no mínimo 8 caracteres!'
                 } else if(input.value.length > maxLength){
                     return responseMsgField.innerHTML = `O campo '${input.labels[0].innerHTML}' precisa possuir no máximo ${maxLength} caracteres!`
-                    // return responseMsgField.innerHTML = 'A senha deve conter no máximo 32 caracteres!'
                 } else {
                     responseMsgField.innerHTML = ''
                 }
@@ -582,21 +549,12 @@ function removeAccent(str) {
 }
 
 const docs = document.querySelector('.docs')
-// const addNewDocBtn = document.querySelector('.addNewDoc')
-// const removeDocBtns = document.querySelectorAll('.removeDoc')
-
 docs.addEventListener('click', (e) => {
     if(e.target.localName !== 'select'){
         const element = e.target.localName === 'i' ? e.target.parentElement : e.target
         const docElement = element.parentElement
         const docs = document.querySelector('.docs')
         const allDocs = document.querySelectorAll('#documento')
-        // let selectValues = []
-        // for(docSelect of docsSelect){
-        //     if(docSelect.value !== ""){
-        //         selectValues.push(docSelect.value)
-        //     }
-        // }
     
         switch(element.id){
             case 'addNewDoc':
@@ -609,13 +567,6 @@ docs.addEventListener('click', (e) => {
                     newDocBtn.innerHTML = '<i class="fa-solid fa-trash"></i>'
                     newDocBtn.id = 'removeDoc'
         
-                    // const newDocSelect = newDoc.querySelector('#documento')
-                    // const newDocOpts = newDocSelect.children
-                    // for(opt of newDocOpts){
-                    //     if(selectValues.includes(opt.value)){
-                    //         newDocSelect.removeChild(opt)
-                    //     }
-                    // }
                     docs.appendChild(newDoc)
                 } else {
                     responseMsgField.innerHTML = "Você não pode selecionar mais do que 5 documentos!"
@@ -634,7 +585,7 @@ docs.addEventListener('click', (e) => {
                     valorFinal += Number(documento.selectedOptions[0].getAttribute('valor_doc'))
                 }
                 valueField.value = formatText(String(valorFinal), 'valor')
-                // selectValues.splice(selectValues.indexOf(docElement.querySelector('#documento').value), 1)
+                
                 break;
             default:
                 break;
